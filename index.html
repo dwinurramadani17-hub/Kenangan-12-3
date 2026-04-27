@@ -25,13 +25,51 @@
       text-align: center;
       padding: 0 10px;
     }
+
+    /* Galeri */
+    .gallery {
+      padding: 20px;
+      background: #fafafa;
+    }
+    .gallery h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Wali Kelas */
     .teacher-section {
       padding: 20px;
       background: #fff8e1;
     }
     .teacher-card {
       display: flex;
-      flex-direction: column; /* default HP */
+      flex-direction: column;
       align-items: center;
       text-align: center;
     }
@@ -47,16 +85,18 @@
     }
     @media (min-width: 768px) {
       .teacher-card {
-        flex-direction: row;       /* laptop: foto + teks sejajar */
+        flex-direction: row;
         justify-content: flex-start;
         text-align: left;
         align-items: center;
       }
       .teacher-card img {
-        max-width: 200px;          /* foto lebih kecil */
+        max-width: 200px;
         margin-right: 20px;
       }
     }
+
+    /* Siswa */
     .students {
       padding: 20px;
       background: #f0f0f0;
@@ -89,6 +129,8 @@
     .card h3 {
       font-size: 0.8rem;
     }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 15px;
@@ -103,6 +145,16 @@
   <header>
     <h1>Kenangan Kelas 12</h1>
   </header>
+
+  <!-- Galeri Foto -->
+  <section class="gallery">
+    <h2>Galeri Kenangan</h2>
+    <div class="gallery-grid">
+      <img src="sub1.jpg" alt="Kenangan 1">
+      <img src="sub2.jpg" alt="Kenangan 2">
+      <img src="sub3.jpg" alt="Kenangan 3">
+    </div>
+  </section>
 
   <!-- Wali Kelas -->
   <section class="teacher-section">
