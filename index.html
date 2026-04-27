@@ -23,14 +23,16 @@
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 2.2rem;
+      text-align: center;
+      padding: 0 10px;
       animation: fadeIn 2s ease;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 20px;
     }
     .gallery img {
       width: 100%;
@@ -43,21 +45,22 @@
       transform: scale(1.05);
     }
     .students {
-      padding: 40px;
+      padding: 20px;
       background: #f0f0f0;
     }
     .students h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
     }
     .card {
       background: white;
-      padding: 15px;
+      padding: 10px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
@@ -67,13 +70,14 @@
     }
     .card img {
       width: 100%;
-      height: 200px;
+      height: auto;
+      max-height: 180px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .card h3 {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     .card.fade-in {
       opacity: 1;
@@ -86,9 +90,10 @@
     }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       background: #222;
       color: #fff;
+      font-size: 0.9rem;
     }
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(20px);}
@@ -104,21 +109,20 @@
 
   <!-- Galeri Foto -->
   <section class="gallery">
-    <img src="images/sub1.jpg" alt="Kenangan 1">
-    <img src="images/sub2.jpg" alt="Kenangan 2">
-    <img src="images/sub3.jpg" alt="Kenangan 3">
-    <!-- Tambah foto lain -->
+    <img src="sub1.jpg" alt="Kenangan 1">
+    <img src="sub2.jpg" alt="Kenangan 2">
+    <img src="sub3.jpg" alt="Kenangan 3">
   </section>
 
   <!-- Daftar Siswa -->
   <section class="students">
     <h2>Daftar Siswa Kelas 12</h2>
     <div class="grid">
-      <div class="card"><img src="aden.jpg"><h3>1. ADEN SYAHIR PERI ΚΑΒΕΚΤΙ</h3></div>
+      <div class="card"><img src="aden.jpg"><h3>1. ADEN SYAHIR PERI KABEKTI</h3></div>
       <div class="card"><img src="aisyah.jpg"><h3>2. AISYAH</h3></div>
       <div class="card"><img src="amanah.jpg"><h3>3. AMANAH SEPTI RAMADHANI</h3></div>
       <!-- lanjutkan semua siswa sampai 33 -->
-      <div class="card"><img src="zidan.jpg"><h3>33. ZIDAN RAYHANDA</h3></div>
+      <div class="card"><img src="images/zidan.jpg"><h3>33. ZIDAN RAYHANDA</h3></div>
     </div>
   </section>
 
@@ -127,7 +131,7 @@
     <h2>Wali Kelas Kami</h2>
     <div class="grid">
       <div class="card teacher">
-        <img src="walikelas.jpg" alt="Maliani, S.Pd Ekop">
+        <img src="images/walikelas.jpg" alt="Maliani, S.Pd Ekop">
         <h3>MALIANI, S.Pd Ekop</h3>
       </div>
     </div>
@@ -140,9 +144,9 @@
 
   <script>
     // Animasi fade-in saat scroll
-    const images = document.querySelectorAll('.gallery img, .card');
+    const elements = document.querySelectorAll('.gallery img, .card');
     window.addEventListener('scroll', () => {
-      images.forEach(el => {
+      elements.forEach(el => {
         const rect = el.getBoundingClientRect();
         if(rect.top < window.innerHeight - 50) {
           el.classList.add('fade-in');
